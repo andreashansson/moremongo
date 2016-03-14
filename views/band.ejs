@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <ul>
+
+	    <% band.forEach(function(value) { %>
+
+	  	<li><%= value.name %></li>
+	  	<li><%= value.place %></li>
+	  	<li><%= value.rate %></li>
+
+	  	<% }); %>
+
+  </ul>
+
+  </body>
+</html>
