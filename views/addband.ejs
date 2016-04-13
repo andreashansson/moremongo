@@ -5,10 +5,14 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+  <% include menu/menu %>
 
-    <form action="addband" method="post">
-      <input type="text" id="name" name="name" />
-      <input type="text" id="place" name="place" />
+    <form action="addband" method="POST">
+      <label for="name">Band:</label><br>
+      <input type="text" id="name" name="name" /><br><br>
+      <label for="place">Plats:</label><br>
+      <input type="text" id="place" name="place" /><br><br>
+      <label for="rate">Betyg:</label><br>
       <select id="rate" name="rate">
         
         <option value="1">1</option>
@@ -22,7 +26,12 @@
         <option value="9">9</option>
         <option value="10">10</option>
 
-      </select>
-      <input type="submit" value="Lägg till band" />
+      </select><br><br>
+      <input type="submit" value="Lägg till band" /><br><br>
+      <input type="button" value="Tillbaka" onClick="history.go(-1);return true;" />
+
+    </form>
+
+
   </body>
 </html>

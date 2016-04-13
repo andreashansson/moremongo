@@ -3,12 +3,28 @@ var Schema = mongoose.Schema;
 
 var bandSchema = new Schema({
 
-	name: String,
-	place: String,
-	rate: Number
+	name: {
+		
+		type: String,
+		required: true
+		
+	},
+
+	place: {
+	
+		type: String,
+		required: true
+	
+	},
+	
+	rate: {
+	
+		type: Number
+	
+	}
 
 });
-
-var Band = mongoose.model('User', bandSchema);
+					//denna | sätter namn på collectionen
+var Band = mongoose.model('Band', bandSchema);
 
 module.exports = Band;

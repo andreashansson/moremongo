@@ -2,7 +2,6 @@
 var express = require('express');
 var router = express.Router();
 var Band = require('../modeller/bandmodell');
-var mongo
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,17 +14,19 @@ router.get('/', function(req, res, next) {
 
 });
 
-router.post('/addband', function(req, res, next) {
+router.post('/', function(req, res, next) {
 
-	console.log(req.body);
-	res.render('addband');
+	var rateInt = parseInt(req.body.rate);
 
 	Band.create({
 
-		name: "Fu Manchu",
-		place: "Sticky Fingers"
+		name: req.body.name,
+		place: req.body.place,
+		rate: rateInt
 
 	});
+
+	res.redirect('/addband');
 
 });
 

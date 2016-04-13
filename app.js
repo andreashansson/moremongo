@@ -4,11 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 var mongoose = require('mongoose');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var band = require('./routes/band');
 var addband = require('./routes/addband');
+var singleBand = require('./routes/singleband');
 
 mongoose.connect('mongodb://localhost/banddb');
 
@@ -30,6 +32,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/band', band);
 app.use('/addband', addband);
+app.use('/singleband', singleBand);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

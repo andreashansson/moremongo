@@ -5,14 +5,12 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-
+    <% include menu/menu %>
     <ul>
 
 	    <% band.forEach(function(value) { %>
 
-	  	<li><%= value.name %></li>
-	  	<li><%= value.place %></li>
-	  	<li><%= value.rate %></li>
+	  	<li><a href="/singleband/<%=value._id %>"><%= value.name %></a></li>
 
 	  	<% }); %>
 

@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   
 	Band.find( ).then(function(element) {
 
-		res.render('/band', { 
+		res.render('band', { 
 
   			band: element 
 
